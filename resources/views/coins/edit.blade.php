@@ -2,17 +2,18 @@
 
 @section('content')
 
-<h1>Create your coin</h1>
+<h1>Edit your coin</h1>
 
-<form action="{{route('coins.store')}}" method = "POST">
+<form action="{{route('coins.update', $coin -> id)}}" method = "POST">
     @csrf
+    @method('PUT')
     <div>
         <label for="">Short Name</label>
         <input type="text" name='short_name'>
     </div>
     <div>
         <label for="">Name</label>
-        <input type="text" name='name'>
+        <input type="text" name='name' >
     </div>
     <input type = 'submit' value = 'Submit'>
 </form>
